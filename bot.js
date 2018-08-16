@@ -45,3 +45,13 @@ Client.on('message', (message) => {
     }
   
 })
+
+Client.on('guildMemberAdd', (member) => {
+
+   let h = 1000 * 60 * 60 * 24 * 2
+   
+     if(member.user.createdTimestamp > (h)) return;
+   
+   member.ban({reason: 'Fake or advertising account'})
+
+})
